@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mwamba Vision Classifier</string>
+    <string name="app_credit">Built by Mwamba Mutale</string>
+    <string name="classification_label">Classification result</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="choose_gallery">Choose from Gallery</string>
+    <string name="waiting_for_image">Select or capture an image</string>
+</resources>

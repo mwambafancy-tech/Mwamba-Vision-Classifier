@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_surface"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/brand_text"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/appCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appTitle"
+        android:layout_marginTop="4dp"
+        android:text="@string/app_credit"
+        android:textColor="@color/brand_muted"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_below="@id/appCredit"
+        android:layout_marginTop="24dp"
+        android:adjustViewBounds="true"
+        android:background="@color/white"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/classified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/classification_label"
+        android:textColor="@color/brand_muted"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/classified"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="@string/waiting_for_image"
+        android:textColor="@color/brand_primary_dark"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button2"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@color/brand_primary"
+        android:text="@string/take_picture"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/brand_accent"
+        android:text="@string/choose_gallery"
+        android:textAllCaps="false"
+        android:textColor="@color/brand_text"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
