@@ -46,9 +46,19 @@ git branch -M main
 git remote remove origin 2>/dev/null || true
 git remote add origin "https://github.com/${GITHUB_USER}/${REPO_NAME}.git"
 
+ASKPASS_FILE="$(mktemp /tmp/mwamba_git_askpass.XXXXXX)"
+trap 'rm -f "$ASKPASS_FILE"' EXIT
+cat > "$ASKPASS_FILE" <<'ASKPASS'
+#!/usr/bin/env bash
+case "$1" in
+  *Username*) printf "%s" "$GITHUB_USER" ;;
+  *Password*) printf "%s" "$GITHUB_TOKEN" ;;
+  *) printf "" ;;
+esac
+ASKPASS
+chmod 700 "$ASKPASS_FILE"
+
 echo "Pushing code to GitHub..."
-git -c credential.helper= \
-  -c http.extraHeader="Authorization: Bearer ${GITHUB_TOKEN}" \
-  push -u origin main
+GIT_ASKPASS="$ASKPASS_FILE" GIT_TERMINAL_PROMPT=0 git -c credential.helper= push -u origin main
 
 echo "Done: https://github.com/${GITHUB_USER}/${REPO_NAME}"
