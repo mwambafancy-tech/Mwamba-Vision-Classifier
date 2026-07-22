@@ -18,6 +18,9 @@ if [ -z "$GITHUB_USER" ] || [ -z "$GITHUB_TOKEN" ]; then
   exit 1
 fi
 
+export GITHUB_USER
+export GITHUB_TOKEN
+
 if [ "$VISIBILITY" = "private" ]; then
   PRIVATE_VALUE=true
 else
