@@ -62,6 +62,10 @@ ASKPASS
 chmod 700 "$ASKPASS_FILE"
 
 echo "Pushing code to GitHub..."
-GIT_ASKPASS="$ASKPASS_FILE" GIT_TERMINAL_PROMPT=0 git -c credential.helper= push -u origin main
+GIT_ASKPASS="$ASKPASS_FILE" GIT_TERMINAL_PROMPT=0 git \
+  -c credential.helper= \
+  -c http.version=HTTP/1.1 \
+  -c http.postBuffer=157286400 \
+  push -u origin main
 
 echo "Done: https://github.com/${GITHUB_USER}/${REPO_NAME}"
