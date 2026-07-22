@@ -20,6 +20,18 @@ Run Android unit tests after Gradle dependencies are available:
 GRADLE_USER_HOME=.gradle-user-home ./gradlew test
 ```
 
+Run Python syntax checks for the training pipeline:
+
+```bash
+python -m py_compile training/src/mwamba_vision/*.py
+```
+
+Run ML evaluation after training:
+
+```bash
+./training/scripts/evaluate_model.sh training/data
+```
+
 ## Manual App Test
 
 1. Launch Mwamba Vision Classifier on an Android device or emulator.

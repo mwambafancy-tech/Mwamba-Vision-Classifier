@@ -7,3 +7,14 @@ captures/
 externalNativeBuild/
 .cxx/
 *.iml
+training/data/*
+!training/data/.gitkeep
+training/artifacts/*
+!training/artifacts/.gitkeep
+training/reports/*
+!training/reports/.gitkeep
+*.keras
+*.h5
+*.png
+__pycache__/
+.pycache/

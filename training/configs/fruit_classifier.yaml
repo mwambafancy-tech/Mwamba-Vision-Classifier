@@ -1,0 +1,18 @@
+project: Mwamba Vision Classifier
+owner: Mwamba Mutale
+model:
+  type: cnn
+  image_size: 32
+  batch_size: 32
+  epochs: 20
+  learning_rate: 0.001
+dataset:
+  validation_split: 0.2
+  expected_classes:
+    - apple
+    - banana
+    - orange
+outputs:
+  artifacts_dir: training/artifacts
+  reports_dir: training/reports
+  android_model_path: app/src/main/ml/model.tflite
